@@ -4,7 +4,6 @@ FROM ubuntu:precise
 MAINTAINER Matthew Seddon <dark@midnightreign.org>
 
 RUN apt-get update
-RUN apt-get -y dist-upgrade
 RUN apt-get -y install python-twisted wget unzip
 
 # punjab
