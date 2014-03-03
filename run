@@ -1,0 +1,1 @@
+docker run -p 7070:7070 -d -name punjab thisgeek/punjab
