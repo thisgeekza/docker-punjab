@@ -1,1 +1,2 @@
+#!/bin/sh
 docker build --rm=true -t thisgeek/punjab .

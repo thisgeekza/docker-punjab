@@ -1,1 +1,13 @@
-docker run -p 7070:7070 -d -name punjab thisgeek/punjab
+#!/bin/sh
+
+PJPORT=5280
+PJSRVHOST=""
+
+# Do not modify below
+
+if [ -z "$PJSRVHOST" ]
+then
+  echo docker run -p $PJPORT:5280 -d -dns 127.0.0.1 -name punjab thisgeek/punjab
+else
+  echo docker run -p $PJPORT:5280 -d -e "PJSRVHOST=$PJSRVHOST" -dns 127.0.0.1 -name punjab thisgeek/punjab
+fi

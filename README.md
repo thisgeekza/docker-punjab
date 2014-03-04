@@ -2,8 +2,17 @@
 This is a basic docker container for the Punjab BOSH connection manager.
 
 ## Configuration
-In order to configure the container, you will need to build it from scratch.
-Edit the punjab.tac file to your liking. Consult the information at the Punjab repo linked above.
+The container can be configured via the `run` script. At the top of the file, two variables are specified:
+
+   PJPORT=5280
+   PJSRVHOST=""
+
+`PJPORT` specifies the port that Punjab will listen on, by default, it will listen on port 5280.
+`PJSRVHOST` specifies the SRV record to use for punjab, should it be necessary. If not specified, it is not used.
+The format for the expected string is the same as used by dnsmasq "srv-host" option:
+
+`[service].[protocol].[domain],[target],[port],[priority],[weight]`
+`_xampp._tcp.example.org,example.org,5222,0,100`
 
 ## Build
 The Dockerfile pulls from the [Punjab Github Repo](https://github.com/twonds/punjab) and then builds the container.
@@ -14,5 +23,5 @@ Pull the image via `sudo docker pull thisgeek/punjab`.
 
 ## Running the container
 Execute `sudo ./run`.
-The container will be called 'punjab' and listens on port 7070.
+The container will be called 'punjab' and listens on port 5280.
 
