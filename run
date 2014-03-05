@@ -2,14 +2,16 @@
 
 PJPORT=5280
 # SRV record example:
-#PJSRVHOST="_xampp._tcp.example.org,example.org,5222,0,100"
-PJSRVHOST=""
+#PJSRVHOST=_xampp._tcp.example.org,example.org,5222,0,100
+PJSRVHOST=
+PJNAME=punjab
+PJCONTAINER=thisgeek/punjab
 
 # Do not modify below
 
 if [ -z "$PJSRVHOST" ]
 then
-  docker run -p $PJPORT:5280 -d -dns 127.0.0.1 -name punjab thisgeek/punjab
+  docker run -p $PJPORT:5280 -d -dns 127.0.0.1 -name $PJNAME $PJCONTAINER
 else
-  docker run -p $PJPORT:5280 -d -e "PJSRVHOST=$PJSRVHOST" -dns 127.0.0.1 -name punjab thisgeek/punjab
+  docker run -p $PJPORT:5280 -d -e "PJSRVHOST=$PJSRVHOST" -dns 127.0.0.1 -name $PJNAME $PJCONTAINER
 fi
