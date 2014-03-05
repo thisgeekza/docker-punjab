@@ -1,6 +1,10 @@
 # Punjab Docker Container
 This is a basic docker container for the Punjab BOSH connection manager.
 
+## How to use
+Clone the github repository `git clone https://github.com/thisgeekza/docker-punjab.git`
+Pull the docker image via `sudo docker pull thisgeek/punjab`.
+
 ## Configuration
 The container can be configured via the `run` script. At the top of the file,
 several variables are specified, but only two are really necessary.
@@ -25,9 +29,6 @@ The Dockerfile pulls from the [Punjab Github Repo](https://github.com/twonds/pun
 and then builds the container.
 You can build it from scratch using `sudo ./build`, or by manually running the
 docker build process with your preferred options.
-
-## Using the docker image repository
-Pull the image via `sudo docker pull thisgeek/punjab`.
 
 ## Running the container
 Execute `sudo ./run`.

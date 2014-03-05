@@ -4,6 +4,7 @@ PJPORT=5280
 # SRV record example:
 #PJSRVHOST=_xampp._tcp.example.org,example.org,5222,0,100
 PJSRVHOST=
+
 PJNAME=punjab
 PJCONTAINER=thisgeek/punjab
 
